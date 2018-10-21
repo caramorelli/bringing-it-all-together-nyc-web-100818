@@ -38,7 +38,7 @@ class Dog
     question = DB[:conn].execute("SELECT * FROM dogs WHERE name = '#{name}' AND breed = '#{breed}'")
     if question.id.nil?
       info = question[0]
-      new_dog = Dog.new(id: info[0], name: )
+      new_dog = Dog.new(id: info[0], name: info[1], breed: info[2])
     self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
   end 
   
