@@ -34,7 +34,7 @@ class Dog
     DB[:conn].execute(sql, id).map {  |row| self.new_from_db(row) }.first
   end 
   
-  def self.find_or_create_by(attr_hash)
+  def self.find_or_create_by(name: name, breed: breed)
     self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
   end 
   
