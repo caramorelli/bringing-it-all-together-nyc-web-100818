@@ -35,7 +35,7 @@ class Dog
   end 
   
   def self.find_or_create_by(attr_hash)
-    print attr_hash
+    print attr_hash.id
     puts ''
     # self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
   end 
