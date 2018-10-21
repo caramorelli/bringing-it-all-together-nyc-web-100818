@@ -21,7 +21,7 @@ class Dog
   end 
   
   def self.create(name: name, breed: breed)
-    new_dog = self.new_from_db(attr_hash.values)
+    new_dog = self.new(name: name, breed: breed)
     new_dog.save
     new_dog
   end 
