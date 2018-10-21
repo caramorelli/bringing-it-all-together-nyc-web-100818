@@ -32,7 +32,7 @@ class Dog
       SELECT * FROM dogs WHERE id = ? LIMIT 1
     SQL
     
-    DB[:conn].execute(sql, name).map {  |row| self.new_from_db(row) }.first
+    DB[:conn].execute(sql, id).map {  |row| self.new_from_db(row) }.first
   end 
   
   def self.find_or_create_by(attr_hash)
