@@ -20,7 +20,7 @@ class Dog
      DB[:conn].execute("DROP TABLE IF EXISTS dogs")
   end 
   
-  def self.create(attr_hash)
+  def self.create(name: name, breed: breed)
     new_dog = self.new_from_db(attr_hash.values)
     new_dog.save
     new_dog
