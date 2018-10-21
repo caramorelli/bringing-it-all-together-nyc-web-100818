@@ -51,11 +51,7 @@ class Dog
   def initialize(id: nil, name:, breed:)
     @id, @name, @breed = id, name, breed
   end 
-  
-  # def attribute(pair_hash)
-  #   self.new(name: pair_hash.name, breed: pair_hash.breed)
-  # end
-  
+
   def save 
     sql = <<-SQL 
       INSERT INTO dogs (name, breed) VALUES( ?, ?)
