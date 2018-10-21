@@ -34,7 +34,7 @@ class Dog
     DB[:conn].execute(sql, id).map {  |row| self.new_from_db(row) }.first
   end 
   
-  def self.find_or_create_by(name: name, breed: breed)
+  def self.find_or_create_by(name:, breed:)
     question = DB[:conn].execute("SELECT * FROM dogs WHERE name = '#{name}' AND breed = '#{breed}'")
     unless question.nil?
       info = question[0]
