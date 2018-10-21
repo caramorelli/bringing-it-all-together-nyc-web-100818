@@ -42,7 +42,9 @@ class Dog
     else 
       new_dog = self.create(name: name, breed: breed)
     end 
+    new_dog
   end 
+  
   
   def self.new_from_db(row)
     self.new(id: row[0], name: row[1], breed: row[2])
