@@ -37,6 +37,7 @@ class Dog
   def self.find_or_create_by(name: name, breed: breed)
     question = DB[:conn].execute("SELECT * FROM dogs WHERE name = '#{name}' AND breed = '#{breed}'")
     if question.id.nil?
+      
     self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
   end 
   
