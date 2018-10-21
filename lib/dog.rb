@@ -27,12 +27,13 @@ class Dog
     
   end 
   
-  def self.find_by_id
+  def self.find_by_id(id)
+    
     
   end 
   
   def self.find_or_create_by(attr_hash)
-    # self.id.nil? ? 
+    self.id.nil? ? self.create(attr_hash) : 
   end 
   
   def self.new_from_db(row)
