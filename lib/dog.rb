@@ -56,7 +56,7 @@ class Dog
 
   def insert
     sql = <<-SQL
-      INSERT INTO students (name, grade) VALUES (?, ?)
+      INSERT INTO dogs (name, grade) VALUES (?, ?)
     SQL
 
     DB[:conn].execute(sql, self.name, self.breed)
