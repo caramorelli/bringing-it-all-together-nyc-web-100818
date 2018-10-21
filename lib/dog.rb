@@ -37,8 +37,8 @@ class Dog
   end 
   
   def self.find_or_create_by(attr_hash)
-    # print attr_hash.id
-    # puts ''
+    print attr_hash.id
+    puts ''
     # self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
   end 
   
@@ -64,7 +64,7 @@ class Dog
     SQL
 
     DB[:conn].execute(sql, self.name, self.breed)
-    # @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
+     DB[:conn].execute(sql, self.name, self.breed, self.id).map { |row| self.new_from_db(row)  }.first
   end 
   
   def update
