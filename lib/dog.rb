@@ -21,8 +21,6 @@ class Dog
   end 
   
   def self.create(attr_hash)
-    print attr_hash
-    puts ''
     new_dog = self.new_from_db(attr_hash.values)
     new_dog.save
     new_dog
@@ -37,9 +35,7 @@ class Dog
   end 
   
   def self.find_or_create_by(attr_hash)
-    print attr_hash.id
-    puts ''
-    # self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
+    self.id.nil? ? self.create(attr_hash) : self.find_by_id(self.id)
   end 
   
   def self.new_from_db(row)
@@ -63,7 +59,8 @@ class Dog
       INSERT INTO dogs (name, breed) VALUES (?, ?)
     SQL
 
-    DB[:conn].execute(sql, self.name, self.breed, self.id)
+    DB[:conn].execute(sql, self.name, self.breed)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
   end 
   
   def update
