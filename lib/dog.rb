@@ -28,8 +28,7 @@ class Dog
   end 
   
   def self.find_by_id(id)
-    
-    
+
   end 
   
   def self.find_or_create_by(attr_hash)
