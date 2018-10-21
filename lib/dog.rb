@@ -40,7 +40,7 @@ class Dog
       info = question[0]
       new_dog = Dog.new(id: info[0], name: info[1], breed: info[2])
     else 
-      
+    end 
   end 
   
   def self.new_from_db(row)
