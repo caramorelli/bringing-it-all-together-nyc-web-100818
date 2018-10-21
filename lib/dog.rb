@@ -21,8 +21,6 @@ class Dog
   end 
   
   def self.create(attr_hash)
-    print attr_hash
-    puts ''
     new_dog = self.new_from_db(attr_hash.id, attr_hash.name, attr_hash.breed)
     new_dog.save
     new_dog
